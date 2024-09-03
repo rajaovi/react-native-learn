@@ -2,6 +2,7 @@ import { useState } from "react";
 import { StyleSheet, ImageBackground, SafeAreaView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useFonts } from "expo-font";
+import { StatusBar } from "react-native";
 
 import StartGameScreen from "./screens/StartGameScreen";
 import GameScreen from "./screens/GameScreen";
@@ -56,19 +57,22 @@ export default function App() {
   }
 
   return (
-    <LinearGradient
-      style={styles.rootScreen}
-      colors={[Colors.primary700, Colors.accent500]}
-    >
-      <ImageBackground
-        source={require("./assets/image/dices.jpg")}
-        resizeMode="cover"
+    <>
+      <StatusBar style="light" />
+      <LinearGradient
         style={styles.rootScreen}
-        imageStyle={styles.backgroundImage}
+        colors={[Colors.primary700, Colors.accent500]}
       >
-        <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
-      </ImageBackground>
-    </LinearGradient>
+        <ImageBackground
+          source={require("./assets/image/dices.jpg")}
+          resizeMode="cover"
+          style={styles.rootScreen}
+          imageStyle={styles.backgroundImage}
+        >
+          <SafeAreaView style={styles.rootScreen}>{screen}</SafeAreaView>
+        </ImageBackground>
+      </LinearGradient>
+    </>
   );
 }
 

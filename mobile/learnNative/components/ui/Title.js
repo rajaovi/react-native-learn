@@ -13,6 +13,7 @@ export default Title;
 
 const styles = StyleSheet.create({
   title: {
+    backgroundColor: Colors.primary700,
     fontFamily: "open-sans-bold",
     borderWidth: 2,
     borderColor: Colors.white,
